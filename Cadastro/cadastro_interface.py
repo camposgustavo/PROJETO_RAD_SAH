@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-#from tkcalendar import DateEntry
+from tkcalendar import DateEntry
 
 #funções para os botões
 def salvar(): 
@@ -50,7 +50,7 @@ tk.Label(form_frame, text='Quarto:').grid(row=2, column=0, padx=5, pady=5)
 entry_quarto=tk.Entry(form_frame)
 entry_quarto.grid(row=2,column=1,padx=5,pady=5)
 
-'''#campo check-in
+#campo check-in
 tk.Label(form_frame, text="Check-in:").grid(row=3, column=0, padx=5, pady=5)
 entry_checkin = DateEntry(form_frame, date_pattern='dd/mm/yyyy', width=12)
 entry_checkin.grid(row=3, column=1, padx=5, pady=5)
@@ -58,7 +58,7 @@ entry_checkin.grid(row=3, column=1, padx=5, pady=5)
 #campo check-out
 tk.Label(form_frame, text="Check-out:").grid(row=4, column=0, padx=5, pady=5)
 entry_checkout = DateEntry(form_frame, date_pattern='dd/mm/yyyy', width=12)
-entry_checkout.grid(row=4, column=1, padx=5, pady=5)'''
+entry_checkout.grid(row=4, column=1, padx=5, pady=5)
 
 #botão de opção café da manhã
 tk.Label(form_frame, text="Escolha uma opção: ").grid(row=5, column=0, padx=5, pady=5)

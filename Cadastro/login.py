@@ -23,8 +23,8 @@ class LoginApp:
         main_frame.pack(fill=tk.BOTH, expand=True)
 
         ttk.Label(main_frame, text="Usuário:").grid(row=0, column=0, sticky=tk.W)
-        self.username_entry = ttk.Entry(main_frame)
-        self.username_entry.grid(row=0, column=1)
+        self.user_entry = ttk.Entry(main_frame)
+        self.user_entry.grid(row=0, column=1)
 
         ttk.Label(main_frame, text="Senha:").grid(row=1, column=0, sticky=tk.W)
         self.password_entry = ttk.Entry(main_frame, show="•")
@@ -37,20 +37,20 @@ class LoginApp:
         ttk.Button(button_frame, text="Sair", command=self.root.quit).pack(side=tk.RIGHT, padx=5)
 
         self.root.bind('<Return>', lambda event: self.authenticate())
-        self.username_entry.focus_set()
+        self.user_entry.focus_set()
 
     def authenticate(self):
-        username = self.username_entry.get()
+        user = self.user_entry.get()
         password = self.password_entry.get()
 
-        if not username or not password:
+        if not user or not password:
             messagebox.showwarning("Campos Vazios", "Preencha todos os campos!")
             return
 
         try:
             db = DatabaseConnection()
             cursor = db.connection.cursor()
-            cursor.execute("SELECT * FROM usuarios WHERE username = %s AND password = %s", (username, password))
+            cursor.execute("SELECT * FROM usuarios WHERE username = %s AND password = %s", (user, password))
             if cursor.fetchone():
                 messagebox.showinfo("Sucesso", "Login bem-sucedido!")
                 self.root.destroy()

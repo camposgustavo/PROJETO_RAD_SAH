@@ -4,7 +4,7 @@ import mysql.connector
 class DatabaseConnection:
     def __init__(self):
         self.host="localhost"
-        self.usernarme="admin"
+        self.user="admin"
         self.password="root"
         self.db="hotel_db"
         self.connection=self.db_connection()
@@ -13,7 +13,7 @@ class DatabaseConnection:
     def db_connection(self):
         return mysql.connector.connect(
             host=self.host,
-            username=self.username,
+            user=self.user,
             password=self.password,
             db=self.db,
         )
