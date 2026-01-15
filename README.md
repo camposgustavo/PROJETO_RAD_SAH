@@ -21,7 +21,8 @@ Este projeto foi desenvolvido como parte da disciplina de **RAD (Rapid Applicati
 
 ## 🛠️ Tecnologias e Ferramentas
 
-* **Linguagem:** Python 
+* **Linguagem:** Python
+* **Banco de dados:** MySQL
 * **Paradigma:** Programação Estruturada/Modular
 * **Versionamento:** Git & GitHub
 
